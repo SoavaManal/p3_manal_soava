@@ -1,0 +1,241 @@
+
+@keyframes heart-animation {
+    0%{
+        fill: $color-primary;
+        opacity: 0.5;
+        stroke:transparent;
+        transform:scale(0.2);
+    }
+    20%{
+        fill: $color-primary;
+        opacity: 0.7;
+        stroke:transparent;
+        transform:scale(0.4);
+    }
+    50%{
+        fill: $color-primary;
+        opacity: 1;
+        stroke:transparent;
+        transform:scale(0.6);
+    }
+    80%{
+        fill: $color-secondary;
+        opacity: 1;
+        stroke:transparent;
+        transform:scale(0.9);
+    }
+    100%{
+        fill: $color-secondary;
+        opacity: 0.9;
+        stroke:transparent;
+        transform:scale(1);
+    }
+}
+
+@keyframes loading-animation {
+    0%{
+        transform: rotate(0deg); border-width: 10px;
+        transform: translateX(0);
+    }
+    50%{
+        transform: rotate(180deg); border-width: 1px;
+    }
+    100%{
+        transform: rotate(360deg); border-width: 10px;
+        transform: translateX(-9999px);
+    }
+}
+@keyframes container-animation{
+    0% {
+        transform: translate(-9999px);
+    }
+    100% {
+        transform: translate(0);
+        }
+    }
+.loading-spiner{
+    border:10px solid transparent;
+    border-top-color:$color-primary;
+    border-bottom-color:$color-secondary;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin:auto;
+    z-index: 0;
+    position: absolute;
+    left:0; right: 0; top: 0; bottom: 0;
+    animation: loading-animation $loading-dur $loading-delay both linear ;
+}
+.container{
+   animation: container-animation 0ms $container-dur both;
+}
+
+.location{
+    @include bg-color(0.7);
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    &__icons{
+        padding: 0;
+    }
+    &__title{
+        margin-top: 0;
+        margin-left: 15px;
+        margin-bottom: 0;
+        font-weight: bold;
+    }
+}
+.presentation{
+    @include mise-en-page();
+    @include bg-color(0.2);
+    padding-top: 25px;
+    padding-bottom: 60px;
+    &__title{
+        margin-top: 0;
+        @include margin();
+    }
+    &__text{
+        padding-left: $padding-primary + 7px ;
+        padding-right: $padding-primary + 7px ;
+        @include margin();
+    }
+}
+.cards{
+@include margin();
+margin-bottom: 80px;
+position: relative;
+> h1{
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+}
+.nav-card{
+    display: flex;
+    align-items: center;
+    border:1px solid transparent;
+    border-radius: 20px;
+    @include shadow();
+    @include bg-color(0.2);
+    margin-bottom: 30px;
+    margin-left: 20.1px;
+    padding: 5px;
+    > p{
+        margin-left: 30px;
+        margin-right: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+    &__number{
+        position: absolute;
+        left:0px;
+        width: 25px;
+        height: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $color-primary;
+        border-radius: 50%;
+        @include mise-en-page();
+        color: $color-text-btn;
+    }
+}
+.fa-mobile-alt{
+    color:gray;
+    font-size: 22px;
+    padding-left: 12%;
+}
+.fa-list{
+    color:gray;
+    font-size: 20px;
+    padding-left: 12%;
+}
+.fa-store{
+    color:$color-primary;
+    font-size: 18px;
+    padding-left: 12%;
+}
+.contained{
+    padding-top: 50px;
+    @include bg-color(0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 1200px;
+    >h1{
+        @include margin();
+        margin-bottom: 30px;
+    }
+}
+.restaurant-card{
+    @include margin(); 
+    padding-bottom: 70px;
+    /*> a{
+        text-decoration: none;
+        color:black;
+    }*/
+    &__palettedugout{
+        background: url('../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg') no-repeat;
+       @include image-position();
+       position: relative;
+    }
+    &__noteEnchantee{
+        background: url('../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg');
+        @include image-position();
+        background-position-y: 60%;
+        position: relative;
+    }
+    &__laFrancaise{
+        background: url('../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg');
+        @include image-position();
+    }
+    &__deliceDesSens{
+        background: url('../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg');
+        @include image-position();
+    }
+    &__reprentation{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background:#fff;
+        border-radius: 0 0 20px 20px;
+        padding-left:20px;
+        padding-right: 20px;
+        @include shadow();
+        &--icons{
+            fill:transparent;
+            stroke:black;
+            stroke-width: 5;
+            cursor: pointer;
+            >.hearts{
+                &:hover{
+                    > path{
+                        animation: heart-animation 1000ms 150ms both cubic-bezier(.9,0,.1,1);
+                        transform-origin: 50% 100%;
+                    }
+                }
+            }
+        }
+        &--title{
+            margin-left:3px;
+            margin-bottom: 0;
+        }
+        &--text{
+            margin-left:3px;
+            margin-top: 5px;
+        }
+    }}
+
+.btn-nouveau{
+    background-color: $color-tertaire;
+    border-radius: 3px;
+    width: 25%;
+    padding: 7px;
+    text-align: center;
+    font-weight: bold;
+    color:darken($color-tertaire,33);
+    position: absolute;
+    right: 10px;
+    top:15px;
+}

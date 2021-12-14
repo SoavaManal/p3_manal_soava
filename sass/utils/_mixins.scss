@@ -1,0 +1,21 @@
+
+
+@mixin mise-en-page {
+    text-align: center;
+}
+@mixin bg-color($opacity){
+    background: rgba($color-fond,$opacity);
+}
+@mixin margin {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+@mixin image-position {
+    border-radius: 20px 20px 0 0;
+    background-size: 100%;
+    background-position-y: 90%;
+    height: 180px;
+}
+@mixin shadow {
+    box-shadow: 3px 3px 15px $color-fond;
+}
