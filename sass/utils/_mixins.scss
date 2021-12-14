@@ -16,6 +16,12 @@
     background-position-y: 90%;
     height: 180px;
 }
+@mixin image-menu {
+    padding: 200px;
+    padding-bottom: 60px;
+    background-size: 100%;
+    background-position:100%;
+}
 @mixin shadow {
     box-shadow: 3px 3px 15px $color-fond;
 }
