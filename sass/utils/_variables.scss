@@ -5,11 +5,12 @@ $color-secondary:#FF79DA;
 $color-tertaire:#99E2D0;
 $color-text-btn:#fff;
 $color-linear: linear-gradient($color-secondary, $color-primary);
-
 $color-fond: rgb(217,217,217);
+
+$delay: 100ms;
 
 $padding-primary:10px;
 
-$loading-dur:1700ms;
+$loading-dur:1000ms;
 $loading-delay:150ms;
 $container-dur: $loading-dur + $loading-delay;

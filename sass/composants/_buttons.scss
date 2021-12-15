@@ -1,18 +1,5 @@
 
 
-@keyframes btn-animation {
-    
-    0%{
-        opacity: 1;
-    }
-    50%{
-        opacity: 0.8;
-    }
-    100%{
-        opacity: 0.6;
-        box-shadow:  0 0 0 5px rgba(217,217,217,1);
-    }
-}
 .presentation{
     &__btn{
         cursor: pointer;
@@ -24,9 +11,9 @@
         border-radius: 30px;
         background:  $color-linear;
         color:$color-text-btn;
-        box-shadow: 0px 0px 15px 0px $color-fond;
+        box-shadow: 1px 1px 8px 7px $color-fond;
         &:hover{
-            animation: btn-animation 3000ms both ;
+            animation: btn-animation 300ms both ;
         }
     }
 }

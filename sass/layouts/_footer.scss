@@ -1,6 +1,9 @@
 
 .bloc{
     background-color:#303030; 
+    @media screen and (min-width: 768px) {
+        width: 100%;
+    }
 }  
 .myfooter{
         @include margin();
@@ -10,6 +13,10 @@
         &__title{
             margin-top: 0;
             font-family: 'shrikhand',sans-serif;
+            @media screen and (min-width: 768px) {
+                text-align: center;
+                font-size: 40px;
+            }
         }
         &__list{
             list-style: none;
@@ -28,6 +35,13 @@
                     margin-top: 5px;
                     margin-bottom: 5px;
                 }
+        }
+        @media screen and (min-width: 768px) {
+            display: flex;
+            justify-content: space-evenly;
+            margin-left: 80px;
+            margin-right: 80px;
+            font-size: 20px;
         }
     }
 }
