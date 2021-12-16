@@ -84,14 +84,24 @@
         opacity: 1;
     }
 }
-@keyframes validation-animation {
-    0%{
-        transform: translateX(-200px);
+@keyframes check {
+    from{
+        transform: scaleX(0);
     }
-    50%{
-        transform: translateX(-50px);
+    to{
+        transform: scaleX(1);
     }
-    0%{
-        transform: translateX(0);
+}
+@keyframes rotate-icons {
+    from{
+        transform: rotate(360deg);
+    }
+    to{
+        transform: rotate(0deg);
+    }
+}
+@keyframes padding-right {
+    to{
+        padding-right: 50px;
     }
 }

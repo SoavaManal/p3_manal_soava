@@ -21,6 +21,12 @@
     border-radius: 25px 25px 0 0;
     padding-bottom: 20px;
     position: relative;
+    @media screen and (min-width: 768px){
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-left:0px;
+        margin-right: 0px;
+    }
     &__title{
         display: flex;
         align-items: center;
@@ -61,9 +67,17 @@
     @media  screen and (min-width: 768px) {
         display: flex;
         justify-content: space-between;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    > .menus__part{
+        @media  screen and (min-width: 768px) {
+            width: 30%;
+        }
     }
 }
 .cards-menus{
+    @include margin;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -72,12 +86,13 @@
     background-color: #fff;
     padding-left: 20px;
     padding-right: 20px;
-    margin:20px;
+    margin-bottom: 20px;
     @include shadow;
-    animation:animation-cards 500ms $delay cubic-bezier(.6,.12,.38,.95) forwards;
+    animation: animation-cards 500ms $delay cubic-bezier(.6,.12,.38,.95);
     transform-origin: 50% 0%;
+    position: relative;
     &--presentation{
-        > h3{
+        > h4{
             margin-bottom: 0;
         }
         > p{
@@ -86,21 +101,50 @@
     }
     &--pray{
         font-weight: bold;
-        > .validation-bar{
-            background: $color-tertaire;
-            width: 50px;
-            height: 100%;
-            transform-origin: 100% 50%;
-            transform: scale(0);
-            .fa-check-circle{
-                color:$color-text-btn;
-            }
-            &:hover{
-            animation: validation-animation 1s both linear;
-            transform: scale(1);
+    }
+    &--check{
+        > .fa-check-circle{
+            font-size: 25px;
+            padding: 25px;
         }
+        color: #fff;
+        background: $color-tertaire;
+        width: 20%;
+        /*height: 100%;*/
+        margin: 0;
+        position: absolute;
+        top:0; right:0;
+        border-radius: 0 25% 25% 0;
+        transform-origin: 100% 50%;
+        transform: scaleX(0);
+    }
+    &:hover{
+        height: 77px;
+        animation: padding-right 500ms both;
+        & .cards-menus--check{
+            animation: check 1s both linear;
+            & > .fa-check-circle{
+                animation: rotate-icons 1s linear;
+            }
+        }
+        & .cards-menus--pray{
+            animation: padding-right 1s both linear;
+        }
+        & .cards-menus--presentation{
+            width: 80%;
+            > h4{
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            } 
+            > p{
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
         }
     }
+    
 }
 .presentation__btn{
     display:block;

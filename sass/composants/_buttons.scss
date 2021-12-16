@@ -15,5 +15,9 @@
         &:hover{
             animation: btn-animation 300ms both ;
         }
+        @media screen and (min-width: 768px) {
+            font-size: 20px;
+            padding: $padding-primary+10px;
+        }
     }
 }
