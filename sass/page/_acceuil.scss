@@ -81,6 +81,7 @@ position: relative;
     @media screen and (min-width: 768px){
         display: flex;
         justify-content: space-between;
+
         margin-left: 0;
         margin-right: 0;
     }
@@ -159,7 +160,7 @@ position: relative;
     @media screen and (min-width: 768px){
         display:flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: space-evenly;
     }
 }
 .restaurant-card{
