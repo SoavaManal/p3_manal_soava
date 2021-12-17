@@ -21,9 +21,9 @@
     } */ 
 }
 @mixin image-menu {
-    
     padding: 200px;
     padding-bottom: 60px;
+    margin-bottom: -35px;
     background-size: 100%;
     background-position:100%;
     @media screen and (min-width: 768px){

@@ -11,6 +11,7 @@
     position: absolute;
     left:0; right: 0; top: 0; bottom: 0;
     animation: loading-animation $loading-dur $loading-delay both linear ;
+    animation-iteration-count: 1;
 }
 .container{
    animation: container-animation 0ms $container-dur both;
@@ -22,6 +23,13 @@
     justify-content: center;
     padding-top: 20px;
     padding-bottom: 20px;
+    position: relative;
+    &::before{
+        content: "";
+        position: absolute;
+        top:0; left:0; right: 0;
+        border: 1px solid $color-fond;
+    }
     &__icons{
         padding: 0;
     }
@@ -209,7 +217,6 @@ position: relative;
                     > path{
                         animation: heart-animation 300ms 50ms forwards cubic-bezier(.9,0,.1,1);
                         transform-origin: 50% 100%;
-                        background: $color-linear;
                     }
                 }
             }

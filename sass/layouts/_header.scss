@@ -1,5 +1,4 @@
 
-
 .header__logo{
     background: url('../images/logo/ohmyfood.png') no-repeat;
     background-size: 100%;
@@ -24,11 +23,16 @@
     }
 }
 @media screen and (min-width: 768px){
-    header{
-        width: 100%;
-    }    
+    .header{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
     .header__logo{
-        background-size: 55%;
+        background-size: 50%;
         background-position: 50%;
+    }
+    .fa-arrow-left{
+        font-size: 30px;
     }
 }

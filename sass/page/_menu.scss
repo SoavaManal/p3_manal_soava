@@ -1,5 +1,6 @@
 
 
+
 .lapalettedugout__img{
     background: url('../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg') no-repeat;
    @include image-menu;
@@ -17,10 +18,9 @@
    @include image-menu;
 }
 .menus{
-    @include bg-color(0.2);
-    border-radius: 25px 25px 0 0;
+    background-color: rgb(250,250,250);
+    border-radius: 40px 40px 0 0;
     padding-bottom: 20px;
-    position: relative;
     @media screen and (min-width: 768px){
         padding-left: 20px;
         padding-right: 20px;
@@ -28,6 +28,7 @@
         margin-right: 0px;
     }
     &__title{
+        
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -77,6 +78,10 @@
     }
 }
 .cards-menus{
+    &:nth-child(2){animation: animation-cards 500ms 100ms ease-in ; &:hover{animation: animation-cards none;}}
+    &:nth-child(3){animation: animation-cards 500ms 200ms ease-in ; &:hover{animation: animation-cards none;}}
+    &:nth-child(4){animation: animation-cards 500ms 300ms ease-in ; &:hover{animation: animation-cards none;}}
+    &:nth-child(5){animation: animation-cards 500ms 400ms ease-in ; &:hover{animation: animation-cards none;}}
     @include margin;
     cursor: pointer;
     display: flex;
@@ -88,8 +93,9 @@
     padding-right: 20px;
     margin-bottom: 20px;
     @include shadow;
-    animation: animation-cards 500ms $delay cubic-bezier(.6,.12,.38,.95);
-    transform-origin: 50% 0%;
+    z-index: 9;
+    animation-iteration-count: 1;
+    transform-origin: 50% 100%;
     position: relative;
     &--presentation{
         > h4{
@@ -109,29 +115,29 @@
         }
         color: #fff;
         background: $color-tertaire;
+        border:1px solid $color-tertaire;
         width: 20%;
-        /*height: 100%;*/
         margin: 0;
         position: absolute;
         top:0; right:0;
-        border-radius: 0 25% 25% 0;
+        border-radius: 0 25px 25px 0;
         transform-origin: 100% 50%;
         transform: scaleX(0);
     }
     &:hover{
         height: 77px;
-        animation: padding-right 500ms both;
+        animation: padding-right 300ms both;
         & .cards-menus--check{
-            animation: check 1s both linear;
+            animation: check 300ms both linear;
             & > .fa-check-circle{
-                animation: rotate-icons 1s linear;
+                animation: rotate-icons 300ms linear;
             }
         }
         & .cards-menus--pray{
-            animation: padding-right 1s both linear;
+            animation: padding-right 300ms both linear;
         }
         & .cards-menus--presentation{
-            width: 80%;
+            width: 60%;
             > h4{
                 text-overflow: ellipsis;
                 white-space: nowrap;
