@@ -644,6 +644,7 @@ body {
   background-color: #fafafa;
   border-radius: 40px 40px 0 0;
   padding-bottom: 20px;
+  width: 100%;
 }
 @media screen and (min-width: 768px) {
   .menus {
