@@ -38,7 +38,7 @@
         @media screen and (min-width: 768px){
             padding: 40px;
         }
-        > h1{
+        > h2{
             font-family: 'shrikhand',sans-serif;
             margin-top: 0;
             margin-bottom: 0;
@@ -65,15 +65,23 @@
     }
 }
 .menu-responsive{
-    @media  screen and (min-width: 768px) {
+    @media  screen and (min-width: 1400px) {
         display: flex;
         justify-content: space-between;
         margin-right: 0;
         margin-left: 0;
+        > .menus__part{
+            width: 40%;
+        }
     }
-    > .menus__part{
-        @media  screen and (min-width: 768px) {
-            width: 30%;
+    @media  screen and (min-width: 768px)and (max-width:1399px) {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-right: 0;
+        margin-left: 0;
+        >.menus__part{
+            width: 80%;
         }
     }
 }
@@ -93,10 +101,9 @@
     padding-right: 20px;
     margin-bottom: 20px;
     @include shadow;
-    z-index: 9;
-    animation-iteration-count: 1;
     transform-origin: 50% 100%;
     position: relative;
+    height: auto;
     &--presentation{
         > h4{
             margin-bottom: 0;
@@ -119,15 +126,16 @@
         background: $color-tertaire;
         border:1px solid $color-tertaire;
         width: 20%;
+        height: 100%;
         margin: 0;
         position: absolute;
-        top:0; right:0;
+        top:0; right:0; bottom: 0;
         border-radius: 0 25px 25px 0;
         transform-origin: 100% 50%;
         transform: scaleX(0);
     }
     &:hover{
-        height: 77px;
+       /* height: 77px;*/
         animation: padding-right 300ms both;
         & .cards-menus--check{
             animation: check 300ms both linear;
@@ -142,12 +150,12 @@
             width: 60%;
             > h4{
                 text-overflow: ellipsis;
-                white-space: nowrap;
+                white-space:nowrap;
                 overflow: hidden;
             } 
             > p{
                 text-overflow: ellipsis;
-                white-space: nowrap;
+                white-space:nowrap;
                 overflow: hidden;
             }
         }
